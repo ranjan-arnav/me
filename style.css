@@ -1,3 +1,5 @@
+/* Your existing CSS above... */
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
   outline: none;
@@ -512,3 +514,38 @@ h3 {
 .resume .func .interests-items div span {
   display: block;
 }
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .resume {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .resume .base,
+    .resume .func {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .resume .base {
+        margin: 10px 0;
+    }
+
+    .resume .func {
+        padding: 10px;
+    }
+
+    /* Add other responsive styles as needed */
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjustments for even smaller devices */
+    .resume .base,
+    .resume .func {
+        padding: 10px;
+    }
+
+    /* Add other responsive styles as needed */
+}
+
+/* End of Media Queries */
