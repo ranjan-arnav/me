@@ -45,6 +45,7 @@
         body {
             font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
         }
+        
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: rgb(13, 17, 23);
@@ -114,18 +115,28 @@
     </style>
     <script>
         function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    let links = document.querySelectorAll('a');
-    links.forEach(link => {
-        link.classList.toggle('dark-mode');
-    });
-    document.getElementById('author-name').classList.toggle('dark-mode');
+            document.body.classList.toggle('dark-mode');
+            let links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.classList.toggle('dark-mode');
+            });
+            document.getElementById('author-name').classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+        }
 
-    // Toggle dark mode class on title element
-    let title = document.querySelector('title');
-    title.classList.toggle('dark-mode-title'); // Toggle the class 'dark-mode-title' on <title>
-}
+        function applyDefaultDarkMode() {
+            if (localStorage.getItem('darkMode') === 'enabled' || !localStorage.getItem('darkMode')) {
+                document.body.classList.add('dark-mode');
+                let links = document.querySelectorAll('a');
+                links.forEach(link => {
+                    link.classList.add('dark-mode');
+                });
+                document.getElementById('author-name').classList.add('dark-mode');
+                document.querySelector('input[type="checkbox"]').checked = true;
+            }
+        }
 
+        document.addEventListener('DOMContentLoaded', applyDefaultDarkMode);
     </script>
 </head>
 <body>
