@@ -23,7 +23,7 @@ hr {
 }
 #author-name {
     font-size: 30px;
-    color: #272727;
+    color: #ff6f61;
     display: inline-block;
 }
 .navbar {
@@ -207,7 +207,7 @@ a.dark-mode {
     color: #ff6f61; /* Slightly brighter red */
 }
 #author-name.dark-mode {
-    color: lightgrey;
+    color: #ff6f61;
 }
 .navbar a.dark-mode {
     color: #ff6f61; /* Slightly brighter red */
@@ -289,10 +289,26 @@ body.dark-mode {
     color: white;
 }
 
-a#author-name {
-    color: #272727; /* Default color for light mode */
-}
 
 body.dark-mode a#author-name {
-    color: lightgrey; /* Color for dark mode */
+    color: #ff6f61; /* Color for dark mode */
 }
+
+a#author-name {
+    color: #ff6f61; /* Default color for light mode */
+}
+/* Add the dark mode styles here */
+body.dark-mode {
+    background-color: rgb(13, 17, 23);
+    color: white;
+}
+a.dark-mode {
+    color: #ff6f61; /* Slightly brighter red */
+}
+#author-name.dark-mode {
+    color: #ff6f61;
+}
+.navbar a.dark-mode {
+    color: #ff6f61; /* Slightly brighter red */
+}
+
