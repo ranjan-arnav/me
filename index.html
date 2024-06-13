@@ -45,7 +45,88 @@
         body {
             font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
         }
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: rgb(13, 17, 23);
+            color: white;
+        }
+        a.dark-mode {
+            color: #ff6f61; /* Slightly brighter red */
+        }
+        #author-name.dark-mode {
+            color: lightgrey;
+        }
+        .navbar a.dark-mode {
+            color: #ff6f61; /* Slightly brighter red */
+        }
+        /* Modern Switch Style */
+        .dark-mode-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            margin-left: 10px; /* Added margin to separate from Contact link */
+        }
+        .dark-mode-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #ff6f61;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        .slider:after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            font-size: 12px;
+        }
+        input:checked + .slider:after {
+            content: '';
+            left: 18px;
+        }
     </style>
+    <script>
+        function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    let links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.classList.toggle('dark-mode');
+    });
+    document.getElementById('author-name').classList.toggle('dark-mode');
+
+    // Toggle dark mode class on title element
+    let title = document.querySelector('title');
+    title.classList.toggle('dark-mode-title'); // Toggle the class 'dark-mode-title' on <title>
+}
+
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -55,24 +136,20 @@
             <ul id="navlist" class="alignable pull-right navbar-ul">
                 
                     
-                        <li class="alignable pull-left nav-list"><a href="#">About</a>
-                    
-                    
-                        /
-                    
+                        <li class="alignable pull-left nav-list"><a href="#">About</a> /
                         </li>
                 
                     
-                        <li class="alignable pull-left nav-list"><a href="#" onclick="window.print()">Resume</a>
-                    
-                    
-                        /
-                    
+                        <li class="alignable pull-left nav-list"><a href="#" onclick="window.print()">Resume</a> /
                         </li>
                 
                     
-                        <li class="alignable pull-left nav-list"><a href="#contact">Contact</a>
-                    
+                        <li class="alignable pull-left nav-list"><a href="#contact">Contact</a> 
+                        <!-- Dark Mode Switch -->
+                        <label class="dark-mode-switch">
+                            <input type="checkbox" onclick="toggleDarkMode()">
+                            <span class="slider"></span>
+                        </label>
                         </li>
                 
             </ul>
@@ -189,7 +266,7 @@
             <h2 id="contact">Contact</h2>
             
             <p>Email: <a href="mailto:ranjanarnav@icloud.com">ranjanarnav@icloud.com</a></p>
-            <!--<p>Phone: <a href="tel:+919229342174">+91-9229342174</a></p> --->
+            <!--- <p>Phone: <a href="tel:+919229342174">+91-9229342174</a></p> --->
             <p>Social:</p>
             <ul>
                 <li><a href="https://www.linkedin.com/in/arnavranjan/">LinkedIn</a></li>
