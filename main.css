@@ -267,15 +267,15 @@ input:checked + .slider:after {
 }
 /* Dark Mode Styles for Title */
 title.dark-mode {
-    color: lightgrey;
+    color: #ff6f61;
 }
 /* Dark Mode Styles for Title */
 body.dark-mode title {
-    color: lightgrey;
+    color: #ff6f61;
 }
 /* Dark Mode Styles for Title */
 .dark-mode-title {
-    color: lightgrey;
+    color: #ff6f61;
 }
 .page-title {
     color: #ff6f61; /* Light red */
